@@ -1,0 +1,50 @@
+# ---- GEOMETRIA DEL CUBESAT ----
+# ======== MUNDO =========
+# --- World ---
+b:Ge/World/Invisible            = "T"
+d:Ge/World/HLX                  = 50 cm
+d:Ge/World/HLZ                  = 50 cm
+d:Ge/World/HLY                  = 50 cm
+s:Ge/World/Material             = "Vacuum"
+
+# ======== MATERIALES =========
+# --- Aluminio anodizado (alumina) ---
+sv:Ma/AnodizedAluminum/Components = 2 "Al" "O"
+uv:Ma/AnodizedAluminum/Fractions = 2 0.5293 0.4707
+d:Ma/AnodizedAluminum/Density = 3.95 g/cm3
+s:Ma/AnodizedAluminum/DefaultColor = "Yellow"
+
+# --- Al 6061 ---
+sv:Ma/Al6061/Components = 9 "Al" "Mg" "Si" "Fe" "Cu" "Cr" "Zn" "Ti" "Mn"
+uv:Ma/Al6061/Fractions = 9 0.972 0.010 0.006 0.0035 0.0028 0.0020 0.0010 0.0010 0.0010
+d:Ma/Al6061/Density = 2.70 g/cm3
+s:Ma/Al6061/DefaultColor = "ligthGray"
+
+# --- Al 7075 ---
+sv:Ma/Al7075/Components = 7 "Al" "Zn" "Mg" "Cu" "Cr" "Fe" "Si"
+uv:Ma/Al7075/Fractions = 7 0.900 0.056 0.025 0.016 0.0023 0.0020 0.0010
+d:Ma/Al7075/Density = 2.81 g/cm3
+s:Ma/Al7075/DefaultColor = "ligthPink"
+
+# ======= GEOMETRIA PRINCIPAL ========
+# ------- Cuerpo principal -------
+# Cara 
+s:Ge/FaceBody1/Parent       = "World"
+s:Ge/FaceBody1/Type         = "TsBox"
+d:Ge/FaceBody1/HLX          = 5 cm
+d:Ge/FaceBody1/HLY          = 5 mm
+d:Ge/FaceBody1/HLZ          = 1 mm
+s:Ge/FaceBody1/Material     = "Al6061"
+
+# ======== GUI ===========
+b:Ts/UseQt = "True"
+s:Gr/ViewA/Type = "OpenGL"
+b:Gr/ViewA/IncludeAxes = "True" 
+s:Gr/ViewA/AxesComponent = "World" 
+d:Gr/ViewA/AxesSize = 20. cm
+
+
+
+
+
+
