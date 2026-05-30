@@ -1,4 +1,4 @@
-# ---- GEOMETRIA DEL CUBESAT ----
+# ======== GEOMETRIA DEL CUBESAT ===================
 # ======== MUNDO =========
 # --- World ---
 b:Ge/World/Invisible            = "T"
@@ -7,41 +7,296 @@ d:Ge/World/HLZ                  = 50 cm
 d:Ge/World/HLY                  = 50 cm
 s:Ge/World/Material             = "Vacuum"
 
+# ================= UNIVERSO DEMO ===================
+s:Ge/Sphere/Parent              = "World"
+s:Ge/Sphere/Type                = "TsSphere"
+b:Ge/Sphere/IsParallel          = "True"
+d:Ge/Sphere/RMin                = 11.0 cm
+d:Ge/Sphere/RMax                = 11.1 cm
+d:Ge/Sphere/SPhi                = 0.0 deg
+d:Ge/Sphere/DPhi                = 360.0 deg
+d:Ge/Sphere/STheta              = 0.0 deg
+d:Ge/Sphere/DTheta              = 180.0 deg
+b:Ge/Sphere/Invisible           = "T"
+s:Ge/Sphere/DrawingStyle        = "WireFrame"
+sc:Ge/Sphere/Color              = "White"
+
 # ======== MATERIALES =========
 # --- Aluminio anodizado (alumina) ---
-sv:Ma/AnodizedAluminum/Components = 2 "Al" "O"
+sv:Ma/AnodizedAluminum/Components = 2 "Aluminum" "Oxygen"
 uv:Ma/AnodizedAluminum/Fractions = 2 0.5293 0.4707
 d:Ma/AnodizedAluminum/Density = 3.95 g/cm3
-s:Ma/AnodizedAluminum/DefaultColor = "Yellow"
+s:Ma/AnodizedAluminum/DefaultColor = "lightBlue"
 
 # --- Al 6061 ---
-sv:Ma/Al6061/Components = 9 "Al" "Mg" "Si" "Fe" "Cu" "Cr" "Zn" "Ti" "Mn"
-uv:Ma/Al6061/Fractions = 9 0.972 0.010 0.006 0.0035 0.0028 0.0020 0.0010 0.0010 0.0010
+sv:Ma/Al6061/Components = 9 "Aluminum" "Magnesium" "Silicon" "Iron" "Copper" "Chromium" "Zinc" "Titanium" "Manganese"
+uv:Ma/Al6061/Fractions = 9 0.972 0.010 0.006 0.0035 0.0028 0.0020 0.0010 0.0010 0.0017
 d:Ma/Al6061/Density = 2.70 g/cm3
-s:Ma/Al6061/DefaultColor = "ligthGray"
+s:Ma/Al6061/DefaultColor = "Gray"
 
 # --- Al 7075 ---
-sv:Ma/Al7075/Components = 7 "Al" "Zn" "Mg" "Cu" "Cr" "Fe" "Si"
+sv:Ma/Al7075/Components = 7 "Aluminum" "Zinc" "Magnesium" "Copper" "Chromium" "Iron" "Silicon"
 uv:Ma/Al7075/Fractions = 7 0.900 0.056 0.025 0.016 0.0023 0.0020 0.0010
 d:Ma/Al7075/Density = 2.81 g/cm3
-s:Ma/Al7075/DefaultColor = "ligthPink"
+s:Ma/Al7075/DefaultColor = "lightPink"
+
+# --- Litio batería ---
+sv:Ma/LithiumBattery/Components = 5 "Lithium" "Carbon" "Oxygen" "Cobalt" "Aluminum"
+uv:Ma/LithiumBattery/Fractions = 5 0.07 0.28 0.3 0.25 0.10
+d:Ma/LithiumBattery/Density = 2.4 g/cm3
+s:Ma/LithiumBattery/DefaultColor = "Yellow"
+
 
 # ======= GEOMETRIA PRINCIPAL ========
 # ------- Cuerpo principal -------
-# Cara 
+# Cara 1
 s:Ge/FaceBody1/Parent       = "World"
 s:Ge/FaceBody1/Type         = "TsBox"
 d:Ge/FaceBody1/HLX          = 5 cm
-d:Ge/FaceBody1/HLY          = 5 mm
+d:Ge/FaceBody1/HLY          = 5 cm
 d:Ge/FaceBody1/HLZ          = 1 mm
-s:Ge/FaceBody1/Material     = "Al6061"
+s:Ge/FaceBody1/Material      = "Al6061"
+d:Ge/FaceBody1/TransZ       = -5 cm
 
+# Cara 2
+s:Ge/FaceBody2/Parent       = "World"
+s:Ge/FaceBody2/Type         = "TsBox"
+d:Ge/FaceBody2/HLX          = 5 cm
+d:Ge/FaceBody2/HLY          = 5 cm
+d:Ge/FaceBody2/HLZ          = 1 mm
+s:Ge/FaceBody2/Material      = "Al6061"
+d:Ge/FaceBody2/TransZ       = 5 cm
+
+sv:Ph/Default/LayeredMassGeometryWorlds = 8 "R1" "R2" "R3" "R4" "FaceBody3" "FaceBody4" "FaceBody5" "FaceBody6"
+
+# Cara 3
+s:Ge/FaceBody3/Parent       = "World"
+s:Ge/FaceBody3/Type         = "TsBox"
+d:Ge/FaceBody3/HLX          = 5 cm
+d:Ge/FaceBody3/HLY          = 1 mm
+d:Ge/FaceBody3/HLZ          = 5 cm
+s:Ge/FaceBody3/Material      = "Al6061"
+d:Ge/FaceBody3/TransY       = -5 cm
+b:Ge/FaceBody3/isParallel     = "True"
+
+# Cara 4
+s:Ge/FaceBody4/Parent       = "World"
+s:Ge/FaceBody4/Type         = "TsBox"
+d:Ge/FaceBody4/HLX          = 5 cm
+d:Ge/FaceBody4/HLY          = 1 mm
+d:Ge/FaceBody4/HLZ          = 5 cm
+s:Ge/FaceBody4/Material      = "Al6061"
+d:Ge/FaceBody4/TransY       = 5 cm
+b:Ge/FaceBody4/isParallel     = "True"
+
+# Cara 5
+s:Ge/FaceBody5/Parent       = "World"
+s:Ge/FaceBody5/Type         = "TsBox"
+d:Ge/FaceBody5/HLX          = 1 mm
+d:Ge/FaceBody5/HLY          = 5 cm
+d:Ge/FaceBody5/HLZ          = 5 cm
+s:Ge/FaceBody5/Material      = "Al6061"
+d:Ge/FaceBody5/TransX       = -5 cm
+b:Ge/FaceBody5/isParallel     = "True"
+
+# Cara 6
+s:Ge/FaceBody6/Parent       = "World"
+s:Ge/FaceBody6/Type         = "TsBox"
+d:Ge/FaceBody6/HLX          = 1 mm
+d:Ge/FaceBody6/HLY          = 5 cm
+d:Ge/FaceBody6/HLZ          = 5 cm
+s:Ge/FaceBody6/Material      = "Al6061"
+d:Ge/FaceBody6/TransX       = 5. cm
+b:Ge/FaceBody6/isParallel     = "True"
+
+# ========= RIELES DE DESPLAZAMIENTO =======
+# Riel 1
+s:Ge/R1/Parent = "World"
+s:Ge/R1/Type = "TsBox"
+s:Ge/R1/Material = "AnodizedAluminum"
+d:Ge/R1/HLX = 0.425 cm
+d:Ge/R1/HLY = 0.425 cm
+d:Ge/R1/HLZ = 56.75 mm
+d:Ge/R1/TransZ = -5 cm
+d:Ge/R1/TransX = -5 cm
+b:Ge/R1/isParallel     = "True"
+d:Ge/R1/RotX        = 90. deg
+d:Ge/R1/RotY        = 0. deg
+d:Ge/R1/RotZ        = 90. deg
+
+# Riel 2
+s:Ge/R2/Parent = "World"
+s:Ge/R2/Type = "TsBox"
+s:Ge/R2/Material = "AnodizedAluminum"
+d:Ge/R2/HLX = 0.425 cm
+d:Ge/R2/HLY = 0.425 cm
+d:Ge/R2/HLZ = 56.75 mm
+d:Ge/R2/TransZ = 5 cm
+d:Ge/R2/TransX = -5 cm
+b:Ge/R2/isParallel     = "True"
+d:Ge/R2/RotX        = 90. deg
+d:Ge/R2/RotY        = 0. deg
+d:Ge/R2/RotZ        = 90. deg
+
+# Riel 3
+s:Ge/R3/Parent = "World"
+s:Ge/R3/Type = "TsBox"
+s:Ge/R3/Material = "AnodizedAluminum"
+d:Ge/R3/HLX = 0.425 cm
+d:Ge/R3/HLY = 0.425 cm
+d:Ge/R3/HLZ = 56.75 mm
+d:Ge/R3/TransZ = 5 cm
+d:Ge/R3/TransX = 5 cm
+b:Ge/R3/isParallel     = "True"
+d:Ge/R3/RotX        = 90. deg
+d:Ge/R3/RotY        = 0. deg
+d:Ge/R3/RotZ        = 90. deg
+
+# Riel 4
+s:Ge/R4/Parent = "World"
+s:Ge/R4/Type = "TsBox"
+s:Ge/R4/Material = "AnodizedAluminum"
+d:Ge/R4/HLX = 0.425 cm
+d:Ge/R4/HLY = 0.425 cm
+d:Ge/R4/HLZ = 56.75 mm
+d:Ge/R4/TransZ = -5 cm
+d:Ge/R4/TransX = 5 cm
+b:Ge/R4/isParallel     = "True"
+d:Ge/R4/RotX        = 90. deg
+d:Ge/R4/RotY        = 0. deg
+d:Ge/R4/RotZ        = 90. deg
+
+
+# =========== Blindaje Multicapa ===========
+
+
+# =========== PCB ==================
+s:Ge/PCB/Parent = "World"
+s:Ge/PCB/Material = "G4_POLYVINYL_CHLORIDE"
+s:Ge/PCB/Type = "TsBox"
+d:Ge/PCB/HLX = 3 cm
+d:Ge/PCB/HLY = 2.5 mm
+d:Ge/PCB/HLZ = 3 cm
+d:Ge/PCB/TransY = -3. cm
+
+# ============= BATERIA ===============
+s:Ge/LithiumBattery/Parent = "World"
+s:Ge/LithiumBattery/Type = "TsBox"
+s:Ge/LithiumBattery/Material = "LithiumBattery"
+d:Ge/LithiumBattery/HLX = 1 cm
+d:Ge/LithiumBattery/HLY = 2 mm
+d:Ge/LithiumBattery/HLZ = 1 cm
+dc:Ge/LithiumBattery/TransY = -2.0 cm
+dc:Ge/LithiumBattery/TransX = -1.5 cm
+dc:Ge/LithiumBattery/TransZ = 0 cm
+
+# ============= CHIP SILICIO =============
+s:Ge/Chip/Parent = "World"
+s:Ge/Chip/Type = "TsBox"
+s:Ge/Chip/Material = "G4_Si"
+d:Ge/Chip/HLX = 1 mm
+d:Ge/Chip/HLY = 0.5 mm
+d:Ge/Chip/HLZ = 1 mm
+d:Ge/Chip/TransY = -2 cm
+d:Ge/Chip/TransX = 0 cm
+d:Ge/Chip/TransZ = 0 cm
+
+# =========== FUENTE DE RAYOS COSMICOS ==============
+# -- Protones --
+s:So/CosmicP/Type                     = "Environment"
+s:So/CosmicP/Component                = "Sphere"
+s:So/CosmicP/BeamParticle             = "proton"
+dv:So/CosmicP/BeamEnergy              = 1. 10. GeV
+ic:So/CosmicP/NumberOfHistoriesInRun  = 10
+s:So/CosmicP/BeamAngularDistribution   = "Isotropic"
+
+# -- Alfa --
+s:So/CosmicA/Type                     = "Environment"
+s:So/CosmicA/Component                = "Sphere"
+s:So/CosmicA/BeamParticle             = "alpha"
+dc:So/CosmicA/BeamEnergy              = 3 GeV
+ic:So/CosmicA/NumberOfHistoriesInRun  = 10
+s:So/CosmicA/BeamAngularDistribution   = "Isotropic"
+
+# -- Iones de Carbono --
+s:So/CosmicC/Type                     = "Environment"
+s:So/CosmicC/Component                = "Sphere"
+s:So/CosmicC/BeamParticle             = "GenericIon(6, 12)"  
+dc:So/CosmicC/BeamEnergy              = 1 GeV
+ic:So/CosmicC/NumberOfHistoriesInRun  = 10
+s:So/CosmicC/BeamAngularDistribution   = "Isotropic"
+
+# -- Iones de Silicio --
+s:So/CosmicSi/Type                     = "Environment"
+s:So/CosmicSi/Component                = "Sphere"
+s:So/CosmicSi/BeamParticle             = "GenericIon(14, 28)"  
+dc:So/CosmicSi/BeamEnergy              = 1 GeV
+ic:So/CosmicSi/NumberOfHistoriesInRun  = 10
+s:So/CosmicSi/BeamAngularDistribution   = "Isotropic"
+
+# -- Iones de hierro --
+s:So/CosmicFe/Type                     = "Environment"
+s:So/CosmicFe/Component                = "Sphere"
+s:So/CosmicFe/BeamParticle             = "GenericIon(26, 56)"  
+dc:So/CosmicFe/BeamEnergy              = 8 GeV
+ic:So/CosmicFe/NumberOfHistoriesInRun  = 10
+s:So/CosmicFe/BeamAngularDistribution   = "Isotropic"
+
+# -- Electrones --
+s:So/CosmicE/Type                     = "Environment"
+s:So/CosmicE/Component                = "Sphere"
+s:So/CosmicE/BeamParticle             = "e-"  
+dc:So/CosmicE/BeamEnergy              = 10 GeV
+ic:So/CosmicE/NumberOfHistoriesInRun  = 10
+s:So/CosmicE/BeamAngularDistribution   = "Isotropic"
+
+# ============== SCORING PLANE =====================
+s:Ge/ScoringPlane/Parent = "World"
+s:Ge/ScoringPlane/Type = "TsBox"
+d:Ge/ScoringPlane/HLX = 3 cm
+d:Ge/ScoringPlane/HLY = 3.5 mm
+d:Ge/ScoringPlane/HLZ = 3 cm
+b:Ge/ScoringPlane/isParallel = "True"
+b:Ge/ScoringPlane/Invisible = "True"
+
+# --- Dosis absorbida - PCB ---
+s:Sc/DSPCB/Quantity                  = "DoseToMedium"
+s:Sc/DSPCB/Component                 = "PCB"
+b:Sc/DSPCB/OutputToConsole           = "True"
+s:Sc/DSPCB/IfOutputFileAlreadyExists = "Overwrite"
+sv:Sc/DSPCB/Report                   = 3 "Sum" "Mean" "Standard_Deviation"
+
+# --- Dosis absorbida - Lithium Battery ---
+s:Sc/DSB/Quantity                  = "DoseToMedium"
+s:Sc/DSB/Component                 = "LithiumBattery"
+b:Sc/DSB/OutputToConsole           = "True"
+s:Sc/DSB/IfOutputFileAlreadyExists = "Overwrite"
+
+# --- ENERGÍA DEPOSITADA ----
+s:Sc/LETPCB/Quantity                  = "EnergyDeposit"
+s:Sc/LETPCB/Component                 = "Chip"
+b:Sc/LETPCB/OutputToConsole           = "True"
+s:Sc/LETPCB/IfOutputFileAlreadyExists = "Overwrite"
+
+# --- Fluence ---
+s:Sc/Fluence/Quantity                  = "Fluence"
+s:Sc/Fluence/Component                 = "ScoringPlane"
+b:Sc/Fluence/OutputToConsole           = "True"
+s:Sc/Fluence/IfOutputFileAlreadyExists = "Overwrite"
+
+# =========== PHYSICS LIST ==================
+s:Ph/Default/Type = "Geant4_Modular"
+sv:Ph/Default/Modules      = 4 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4ion-binarycascade" "g4decay"
+d:Ph/Default/CutForAllParticles = 0.1 mm
 # ======== GUI ===========
-b:Ts/UseQt = "True"
-s:Gr/ViewA/Type = "OpenGL"
-b:Gr/ViewA/IncludeAxes = "True" 
+#b:Ts/UseQt = "True"
+#s:Gr/ViewA/Type = "OpenGL"
+#b:Gr/ViewA/IncludeAxes = "True" 
 s:Gr/ViewA/AxesComponent = "World" 
 d:Gr/ViewA/AxesSize = 20. cm
+s:Gr/ViewA/ColorBy = "ParticleType"
+sv:Gr/ViewA/ColorByParticleTypeNames = 6 "proton" "alpha" "1000060120" "1000140280" "1000260560" "e-" 
+sv:Gr/ViewA/ColorByParticleTypeColors = 6 "lightBlue" "Pink" "Yellow" "Green" "Brown" "Red"
 
 
 

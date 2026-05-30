@@ -69,6 +69,19 @@ dc:So/CosmicE/BeamEnergy              = 10 GeV
 ic:So/CosmicE/NumberOfHistoriesInRun  = 100
 s:So/CosmicE/BeamAngularDistribution   = "Isotropic"
 
+# ============== PHASE SPACE ==================
+s:Sc/PSCosmic/Quantity                  = "PhaseSpace"
+s:Sc/PSCosmic/Surface                   = "Sphere/ZPlusSurface"
+s:Sc/PSCosmic/OutputType                = "ASCII"
+s:Sc/PSCosmic/OutputFile                = "PhaseSpace_Galactic"
+i:Sc/PSCosmic/OutputBufferSize          = 1000
+b:Sc/PSCosmic/OutputToConsole           = "True"
+b:Sc/PSCosmic/IncludeRunID              = "True"
+b:Sc/PSCosmic/IncludeEventID            = "True"
+b:Sc/PSCosmic/IncludeTrackID            = "True"
+b:Sc/PSCosmic/IncludeParentID           = "True"
+b:Sc/PSCosmic/IncludeCreatorProcess     = "True"
+s:Sc/PSCosmic/IfOutputFileAlreadyExists = "Overwrite"
 
 #================
 #==== [GUI]====== 
