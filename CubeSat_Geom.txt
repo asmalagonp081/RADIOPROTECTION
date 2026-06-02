@@ -36,15 +36,17 @@ s:Ma/Al6061/DefaultColor = "Gray"
 
 # --- Al 7075 ---
 sv:Ma/Al7075/Components = 7 "Aluminum" "Zinc" "Magnesium" "Copper" "Chromium" "Iron" "Silicon"
-uv:Ma/Al7075/Fractions = 7 0.900 0.056 0.025 0.016 0.0023 0.0020 0.0010
+uv:Ma/Al7075/Fractions = 7 0.900 0.056 0.025 0.016 0.0001 0.0020 0.0010
 d:Ma/Al7075/Density = 2.81 g/cm3
-s:Ma/Al7075/DefaultColor = "lightPink"
+s:Ma/Al7075/DefaultColor = "Pink"
 
 # --- Litio batería ---
 sv:Ma/LithiumBattery/Components = 5 "Lithium" "Carbon" "Oxygen" "Cobalt" "Aluminum"
 uv:Ma/LithiumBattery/Fractions = 5 0.07 0.28 0.3 0.25 0.10
 d:Ma/LithiumBattery/Density = 2.4 g/cm3
 s:Ma/LithiumBattery/DefaultColor = "Yellow"
+
+# ======= MATERIALES DE RADIOPROTECCIÓN ==========
 
 
 # ======= GEOMETRIA PRINCIPAL ========
@@ -167,8 +169,60 @@ d:Ge/R4/RotY        = 0. deg
 d:Ge/R4/RotZ        = 90. deg
 
 
-# =========== Blindaje Multicapa ===========
+# =========== GEOMETRÍAS DE BLINDAJE ===========
+# Cara global 1
+s:Ge/BTC1/Parent = "World"
+s:Ge/BTC1/Type = "TsBox"
+s:Ge/BTC1/Material = "Al7075"
+d:Ge/BTC1/HLX = 4.5 cm
+d:Ge/BTC1/HLY = 4.5 cm
+d:Ge/BTC1/HLZ = 0.500 mm
+d:Ge/BTC1/TransZ = -5 cm
 
+# Cara global 2
+s:Ge/BTC2/Parent = "World"
+s:Ge/BTC2/Type = "TsBox"
+s:Ge/BTC2/Material = "Al7075"
+d:Ge/BTC2/HLX = 4.5 cm
+d:Ge/BTC2/HLY = 4.5 cm
+d:Ge/BTC2/HLZ = 0.500 mm
+d:Ge/BTC2/TransZ = 5 cm
+
+# Cara global 3
+s:Ge/BTC3/Parent = "World"
+s:Ge/BTC3/Type = "TsBox"
+s:Ge/BTC3/Material = "Al7075"
+d:Ge/BTC3/HLX = 4.5 cm
+d:Ge/BTC3/HLY = 0.500 mm
+d:Ge/BTC3/HLZ = 4.5 cm
+d:Ge/BTC3/TransY = -5 cm
+
+# Cara global 4
+s:Ge/BTC4/Parent = "World"
+s:Ge/BTC4/Type = "TsBox"
+s:Ge/BTC4/Material = "Al7075"
+d:Ge/BTC4/HLX = 4.5 cm
+d:Ge/BTC4/HLY = 0.500 mm
+d:Ge/BTC4/HLZ = 4.5 cm
+d:Ge/BTC4/TransZ = 5 cm
+
+# Cara global 5
+s:Ge/BTC5/Parent = "World"
+s:Ge/BTC5/Type = "TsBox"
+s:Ge/BTC5/Material = "Al7075"
+d:Ge/BTC5/HLX = 0.5 mm
+d:Ge/BTC5/HLY = 4.5 mm
+d:Ge/BTC5/HLZ = 4.5 cm
+d:Ge/BTC5/TransX = -5 cm
+
+# Cara global 6
+s:Ge/BTC6/Parent = "World"
+s:Ge/BTC6/Type = "TsBox"
+s:Ge/BTC6/Material = "Al7075"
+d:Ge/BTC6/HLX = 0.5 mm
+d:Ge/BTC6/HLY = 4.5 mm
+d:Ge/BTC6/HLZ = 4.5 cm
+d:Ge/BTC6/TransX = 5 cm
 
 # =========== PCB ==================
 s:Ge/PCB/Parent = "World"
@@ -206,7 +260,7 @@ d:Ge/Chip/TransZ = 0 cm
 s:So/CosmicP/Type                     = "Environment"
 s:So/CosmicP/Component                = "Sphere"
 s:So/CosmicP/BeamParticle             = "proton"
-dv:So/CosmicP/BeamEnergy              = 1. 10. GeV
+d:So/CosmicP/BeamEnergy              = 10 GeV
 ic:So/CosmicP/NumberOfHistoriesInRun  = 10
 s:So/CosmicP/BeamAngularDistribution   = "Isotropic"
 
@@ -251,55 +305,21 @@ ic:So/CosmicE/NumberOfHistoriesInRun  = 10
 s:So/CosmicE/BeamAngularDistribution   = "Isotropic"
 
 # ============== SCORING PLANE =====================
-s:Ge/ScoringPlane/Parent = "World"
-s:Ge/ScoringPlane/Type = "TsBox"
-d:Ge/ScoringPlane/HLX = 3 cm
-d:Ge/ScoringPlane/HLY = 3.5 mm
-d:Ge/ScoringPlane/HLZ = 3 cm
-b:Ge/ScoringPlane/isParallel = "True"
-b:Ge/ScoringPlane/Invisible = "True"
 
-# --- Dosis absorbida - PCB ---
-s:Sc/DSPCB/Quantity                  = "DoseToMedium"
-s:Sc/DSPCB/Component                 = "PCB"
-b:Sc/DSPCB/OutputToConsole           = "True"
-s:Sc/DSPCB/IfOutputFileAlreadyExists = "Overwrite"
-sv:Sc/DSPCB/Report                   = 3 "Sum" "Mean" "Standard_Deviation"
 
-# --- Dosis absorbida - Lithium Battery ---
-s:Sc/DSB/Quantity                  = "DoseToMedium"
-s:Sc/DSB/Component                 = "LithiumBattery"
-b:Sc/DSB/OutputToConsole           = "True"
-s:Sc/DSB/IfOutputFileAlreadyExists = "Overwrite"
-
-# --- ENERGÍA DEPOSITADA ----
-s:Sc/LETPCB/Quantity                  = "EnergyDeposit"
-s:Sc/LETPCB/Component                 = "Chip"
-b:Sc/LETPCB/OutputToConsole           = "True"
-s:Sc/LETPCB/IfOutputFileAlreadyExists = "Overwrite"
-
-# --- Fluence ---
-s:Sc/Fluence/Quantity                  = "Fluence"
-s:Sc/Fluence/Component                 = "ScoringPlane"
-b:Sc/Fluence/OutputToConsole           = "True"
-s:Sc/Fluence/IfOutputFileAlreadyExists = "Overwrite"
 
 # =========== PHYSICS LIST ==================
 s:Ph/Default/Type = "Geant4_Modular"
 sv:Ph/Default/Modules      = 4 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4ion-binarycascade" "g4decay"
 d:Ph/Default/CutForAllParticles = 0.1 mm
+
 # ======== GUI ===========
-#b:Ts/UseQt = "True"
-#s:Gr/ViewA/Type = "OpenGL"
-#b:Gr/ViewA/IncludeAxes = "True" 
+b:Ts/UseQt = "True"
+s:Gr/ViewA/Type = "OpenGL"
+b:Gr/ViewA/IncludeAxes = "True" 
 s:Gr/ViewA/AxesComponent = "World" 
 d:Gr/ViewA/AxesSize = 20. cm
 s:Gr/ViewA/ColorBy = "ParticleType"
 sv:Gr/ViewA/ColorByParticleTypeNames = 6 "proton" "alpha" "1000060120" "1000140280" "1000260560" "e-" 
 sv:Gr/ViewA/ColorByParticleTypeColors = 6 "lightBlue" "Pink" "Yellow" "Green" "Brown" "Red"
-
-
-
-
-
 
