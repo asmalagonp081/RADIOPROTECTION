@@ -1,0 +1,111 @@
+# ----------------- FUENTE RAYOS COSMICOS --------------------
+# ================= MUNDO ===========================
+b:Ge/World/Invisible            = "T"
+d:Ge/World/HLX                  = 100 cm
+d:Ge/World/HLZ                  = 100 cm
+d:Ge/World/HLY                  = 100 cm
+s:Ge/World/Material             = "Vacuum"
+
+# ================= UNIVERSO DEMO ===================
+s:Ge/Sphere/Parent              = "World"
+s:Ge/Sphere/Type                = "TsSphere"
+b:Ge/Sphere/IsParallel          = "True"
+d:Ge/Sphere/RMin                = 11.0 cm
+d:Ge/Sphere/RMax                = 11.1 cm
+d:Ge/Sphere/SPhi                = 0.0 deg
+d:Ge/Sphere/DPhi                = 360.0 deg
+d:Ge/Sphere/STheta              = 0.0 deg
+d:Ge/Sphere/DTheta              = 180.0 deg
+b:Ge/Sphere/Invisible           = "T"
+s:Ge/Sphere/DrawingStyle        = "WireFrame"
+sc:Ge/Sphere/Color              = "White"
+
+# =========== FUENTE DE RAYOS COSMICOS ==============
+# -- Protones --
+s:So/CosmicP/Type                       = "Environment"
+s:So/CosmicP/Component                  = "Sphere"
+s:So/CosmicP/BeamParticle               = "proton"
+s:So/CosmicP/BeamEnergySpectrumType     = "Continuous"
+dv:So/CosmicP/BeamEnergySpectrumValues  = 4 1.0 3.0 6.0 10.0 GeV
+uv:So/CosmicP/BeamEnergySpectrumWeights = 4 0.6 0.3 0.08 0.02
+ic:So/CosmicP/NumberOfHistoriesInRun    = 10
+s:So/CosmicP/BeamAngularDistribution    = "Isotropic"
+
+# -- Alfa --
+s:So/CosmicA/Type                     = "Environment"
+s:So/CosmicA/Component                = "Sphere"
+s:So/CosmicA/BeamParticle             = "alpha"
+s:So/CosmicA/BeamEnergy               = "Continuous"
+s:So/CosmicA/BeamEnergySpectrumFile   = "alfa.txt"
+s:So/CosmicA/BeamEnergySpectrumUnit    = "MeV"
+ic:So/CosmicA/NumberOfHistoriesInRun  = 10
+s:So/CosmicA/BeamAngularDistribution   = "Isotropic"
+
+# -- Iones de Carbono --
+s:So/CosmicC/Type                     = "Environment"
+s:So/CosmicC/Component                = "Sphere"
+s:So/CosmicC/BeamParticle             = "GenericIon(6, 12)" 
+s:So/CosmicC/BeamEnergySpectrumType     = "Continuous"
+dv:So/CosmicC/BeamEnergySpectrumValues  = 4 1.0 3.0 6.0 10.0 GeV
+uv:So/CosmicC/BeamEnergySpectrumWeights = 4 0.6 0.3 0.08 0.02
+ic:So/CosmicC/NumberOfHistoriesInRun  = 10
+s:So/CosmicC/BeamAngularDistribution   = "Isotropic"
+
+# -- Iones de Silicio --
+s:So/CosmicSi/Type                     = "Environment"
+s:So/CosmicSi/Component                = "Sphere"
+s:So/CosmicSi/BeamParticle             = "GenericIon(14, 28)"  
+s:So/CosmicSi/BeamEnergySpectrumType     = "Continuous"
+dv:So/CosmicSi/BeamEnergySpectrumValues  = 4 1.0 3.0 6.0 10.0 GeV
+uv:So/CosmicSi/BeamEnergySpectrumWeights = 4 0.6 0.3 0.08 0.02
+ic:So/CosmicSi/NumberOfHistoriesInRun  = 10
+s:So/CosmicSi/BeamAngularDistribution   = "Isotropic"
+
+# -- Iones de hierro --
+s:So/CosmicFe/Type                     = "Environment"
+s:So/CosmicFe/Component                = "Sphere"
+s:So/CosmicFe/BeamParticle             = "GenericIon(26, 56)"  
+s:So/CosmicFe/BeamEnergySpectrumType     = "Continuous"
+dv:So/CosmicFe/BeamEnergySpectrumValues  = 4 1.0 3.0 6.0 10.0 GeV
+uv:So/CosmicFe/BeamEnergySpectrumWeights = 4 0.6 0.3 0.08 0.02
+ic:So/CosmicFe/NumberOfHistoriesInRun  = 10
+s:So/CosmicFe/BeamAngularDistribution   = "Isotropic"
+
+# -- Electrones --
+s:So/CosmicE/Type                     = "Environment"
+s:So/CosmicE/Component                = "Sphere"
+s:So/CosmicE/BeamParticle             = "e-"  
+s:So/CosmicE/BeamEnergySpectrumType     = "Continuous"
+dv:So/CosmicE/BeamEnergySpectrumValues  = 31 30 0.04 0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 1.00 1.25 1.50 1.75 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75 4.00 4.25 4.50 4.75 5.00 5.50 6.00 6.50 7.00 MeV 
+uv:So/CosmicE/BeamEnergySpectrumWeights = 31 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256 0.032256
+ic:So/CosmicE/NumberOfHistoriesInRun  = 10
+s:So/CosmicE/BeamAngularDistribution   = "Isotropic"
+
+# =========== PHYSICS LIST ==================
+s:Ph/Default/Type = "Geant4_Modular"
+sv:Ph/Default/Modules      = 4 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4ion-binarycascade" "g4decay"
+d:Ph/Default/CutForAllParticles = 0.1 mm
+
+
+# ============== PHASE SPACE ==================
+s:Sc/PSCosmic/Quantity                  = "PhaseSpace"
+s:Sc/PSCosmic/Surface                   = "Sphere/AnySurface"
+s:Sc/PSCosmic/OutputType                = "ASCII"
+s:Sc/PSCosmic/OutputFile                = "PhaseSpace_Galactic"
+i:Sc/PSCosmic/OutputBufferSize          = 1000
+b:Sc/PSCosmic/OutputToConsole           = "True"
+b:Sc/PSCosmic/IncludeRunID              = "True"
+b:Sc/PSCosmic/IncludeEventID            = "True"
+b:Sc/PSCosmic/IncludeTrackID            = "True"
+b:Sc/PSCosmic/IncludeParentID           = "True"
+b:Sc/PSCosmic/IncludeCreatorProcess     = "True"
+s:Sc/PSCosmic/IfOutputFileAlreadyExists = "Overwrite"
+
+#================
+#==== [GUI]====== 
+#================
+#b:Ts/UseQt = "True"
+#s:Gr/ViewA/Type = "OpenGL"
+s:Gr/ViewA/ColorBy = "ParticleType"
+sv:Gr/ViewA/ColorByParticleTypeNames = 6 "proton" "alpha" "1000060120" "1000140280" "1000260560" "e-" 
+sv:Gr/ViewA/ColorByParticleTypeColors = 6 "lightBlue" "Pink" "Yellow" "Green" "Brown" "Red"

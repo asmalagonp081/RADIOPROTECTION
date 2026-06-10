@@ -2,9 +2,9 @@
 # ======== MUNDO =========
 # --- World ---
 b:Ge/World/Invisible            = "T"
-d:Ge/World/HLX                  = 50 cm
-d:Ge/World/HLZ                  = 50 cm
-d:Ge/World/HLY                  = 50 cm
+d:Ge/World/HLX                  = 100 cm
+d:Ge/World/HLZ                  = 100 cm
+d:Ge/World/HLY                  = 100 cm
 s:Ge/World/Material             = "Vacuum"
 
 # ================= UNIVERSO DEMO ===================
@@ -47,6 +47,7 @@ d:Ma/LithiumBattery/Density = 2.4 g/cm3
 s:Ma/LithiumBattery/DefaultColor = "Yellow"
 
 # ======= MATERIALES DE RADIOPROTECCIÓN ==========
+
 
 
 # ======= GEOMETRIA PRINCIPAL ========
@@ -204,7 +205,7 @@ s:Ge/BTC4/Material = "Al7075"
 d:Ge/BTC4/HLX = 4.5 cm
 d:Ge/BTC4/HLY = 0.500 mm
 d:Ge/BTC4/HLZ = 4.5 cm
-d:Ge/BTC4/TransZ = 5 cm
+d:Ge/BTC4/TransY = 5 cm
 
 # Cara global 5
 s:Ge/BTC5/Parent = "World"
@@ -255,57 +256,15 @@ d:Ge/Chip/TransY = -2 cm
 d:Ge/Chip/TransX = 0 cm
 d:Ge/Chip/TransZ = 0 cm
 
-# =========== FUENTE DE RAYOS COSMICOS ==============
-# -- Protones --
-s:So/CosmicP/Type                     = "Environment"
-s:So/CosmicP/Component                = "Sphere"
-s:So/CosmicP/BeamParticle             = "proton"
-d:So/CosmicP/BeamEnergy              = 10 GeV
-ic:So/CosmicP/NumberOfHistoriesInRun  = 10
-s:So/CosmicP/BeamAngularDistribution   = "Isotropic"
-
-# -- Alfa --
-s:So/CosmicA/Type                     = "Environment"
-s:So/CosmicA/Component                = "Sphere"
-s:So/CosmicA/BeamParticle             = "alpha"
-dc:So/CosmicA/BeamEnergy              = 3 GeV
-ic:So/CosmicA/NumberOfHistoriesInRun  = 10
-s:So/CosmicA/BeamAngularDistribution   = "Isotropic"
-
-# -- Iones de Carbono --
-s:So/CosmicC/Type                     = "Environment"
-s:So/CosmicC/Component                = "Sphere"
-s:So/CosmicC/BeamParticle             = "GenericIon(6, 12)"  
-dc:So/CosmicC/BeamEnergy              = 1 GeV
-ic:So/CosmicC/NumberOfHistoriesInRun  = 10
-s:So/CosmicC/BeamAngularDistribution   = "Isotropic"
-
-# -- Iones de Silicio --
-s:So/CosmicSi/Type                     = "Environment"
-s:So/CosmicSi/Component                = "Sphere"
-s:So/CosmicSi/BeamParticle             = "GenericIon(14, 28)"  
-dc:So/CosmicSi/BeamEnergy              = 1 GeV
-ic:So/CosmicSi/NumberOfHistoriesInRun  = 10
-s:So/CosmicSi/BeamAngularDistribution   = "Isotropic"
-
-# -- Iones de hierro --
-s:So/CosmicFe/Type                     = "Environment"
-s:So/CosmicFe/Component                = "Sphere"
-s:So/CosmicFe/BeamParticle             = "GenericIon(26, 56)"  
-dc:So/CosmicFe/BeamEnergy              = 8 GeV
-ic:So/CosmicFe/NumberOfHistoriesInRun  = 10
-s:So/CosmicFe/BeamAngularDistribution   = "Isotropic"
-
-# -- Electrones --
-s:So/CosmicE/Type                     = "Environment"
-s:So/CosmicE/Component                = "Sphere"
-s:So/CosmicE/BeamParticle             = "e-"  
-dc:So/CosmicE/BeamEnergy              = 10 GeV
-ic:So/CosmicE/NumberOfHistoriesInRun  = 10
-s:So/CosmicE/BeamAngularDistribution   = "Isotropic"
 
 # ============== SCORING PLANE =====================
-
+# --- Configuración del Verificador de Energía ---
+s:Sc/VerifySource/Quantity                    = "PhaseSpace"
+s:Sc/VerifySource/Surface                     = "PCB/AnySurface"
+s:Sc/VerifySource/OutputType                  = "ASCII" # Genera un archivo .phsp legible
+b:Sc/VerifySource/IncludeDirectAccessoryHits  = "True"
+s:Sc/VerifySource/IfOutputFileAlreadyExists   = "Overwrite"
+b:Sc/VerifySource/OutputToConsole             = "True"
 
 
 # =========== PHYSICS LIST ==================
@@ -314,9 +273,9 @@ sv:Ph/Default/Modules      = 4 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4ion
 d:Ph/Default/CutForAllParticles = 0.1 mm
 
 # ======== GUI ===========
-b:Ts/UseQt = "True"
-s:Gr/ViewA/Type = "OpenGL"
-b:Gr/ViewA/IncludeAxes = "True" 
+#b:Ts/UseQt = "True"
+#s:Gr/ViewA/Type = "OpenGL"
+#b:Gr/ViewA/IncludeAxes = "True" 
 s:Gr/ViewA/AxesComponent = "World" 
 d:Gr/ViewA/AxesSize = 20. cm
 s:Gr/ViewA/ColorBy = "ParticleType"
