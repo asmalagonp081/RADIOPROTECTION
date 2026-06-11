@@ -1,0 +1,68 @@
+# ======= MATERIALES DE RADIOPROTECCIÓN ==========
+# 1. 1" Aluminized Kapton con 3M 966 Acrylic 
+s:Ma/Aluminized_Kapton_Acrylic/Type    = "Compound"
+b:Ma/Aluminized_Kapton_Acrylic/BuildFromMaterials = "True"
+sv:Ma/Aluminized_Kapton_Acrylic/Components = 3 "G4_Al" "G4_KAPTON" "G4_PLEXIGLASS"
+uv:Ma/Aluminized_Kapton_Acrylic/Fractions  = 3 0.05 0.75 0.20
+d:Ma/Aluminized_Kapton_Acrylic/Density    = 1.45 g/cm3
+
+# 2. 1181 Copper Foil EMI Shielding Tape 
+s:Ma/Copper_EMI_Tape/Type              = "Compound"
+b:Ma/Copper_EMI_Tape/BuildFromMaterials  = "True"
+sv:Ma/Copper_EMI_Tape/Components         = 2 "G4_Cu" "G4_PLEXIGLASS" # Cobre con adhesivo acrílico [cite: 10, 11]
+uv:Ma/Copper_EMI_Tape/Fractions          = 2 0.85 0.15
+d:Ma/Copper_EMI_Tape/Density            = 7.6 g/cm3
+
+# 3. Polyester Tape Film 
+s:Ma/Polyester_Tape/Type               = "Material"
+s:Ma/Polyester_Tape/MethyleneBlueValue = "G4_POLYESTER" # Invoca directamente el Poliéster de Geant4
+
+# 4. Delrin 300ATB (Acetal Resin) 
+s:Ma/Delrin_300ATB/Type                = "Compound"
+sv:Ma/Delrin_300ATB/Components           = 3 "Carbon" "Hydrogen" "Oxygen" # Polioximetileno (POM)
+uv:Ma/Delrin_300ATB/Fractions            = 3 0.4000 0.0671 0.5329
+d:Ma/Delrin_300ATB/Density              = 1.42 g/cm3
+
+# 5. Nextel AF10 (Woven from Nextel 312 fiber)
+# Alúmina-Borosilicato: Al2O3 (62.5%), SiO2 (24.5%), B2O3 (13%)
+s:Ma/Nextel_AF10/Type                  = "Compound"
+sv:Ma/Nextel_AF10/Components             = 4 "Aluminium" "Silicon" "Boron" "Oxygen"
+uv:Ma/Nextel_AF10/Fractions              = 4 0.331 0.114 0.040 0.515
+d:Ma/Nextel_AF10/Density                = 2.70 g/cm3
+
+# 6. PEI (Polyetherimide) Duratron U1000 
+s:Ma/PEI_Duratron/Type                 = "Compound"
+sv:Ma/PEI_Duratron/Components           = 4 "Carbon" "Hydrogen" "Oxygen" "Nitrogen"
+uv:Ma/PEI_Duratron/Fractions            = 4 0.743 0.051 0.158 0.048
+d:Ma/PEI_Duratron/Density              = 1.27 g/cm3
+
+# 7. SP527 Woven Glass Fabric in Epoxy Resin
+s:Ma/SP527_Glass_Epoxy/Type            = "Compound"
+b:Ma/SP527_Glass_Epoxy/BuildFromMaterials = "True"
+sv:Ma/SP527_Glass_Epoxy/Components       = 2 "G4_GLASS_PLATE" "G4_BGO" # Mezcla aproximada de vidrio y resina sintética
+uv:Ma/SP527_Glass_Epoxy/Fractions        = 2 0.60 0.40
+d:Ma/SP527_Glass_Epoxy/Density          = 1.85 g/cm3
+
+# 8. Expando 686 DM (PEEK and Polyphenylene Sulfide woven sleeving)
+s:Ma/Expando_686/Type                  = "Compound"
+sv:Ma/Expando_686/Components             = 4 "Carbon" "Hydrogen" "Oxygen" "Sulfur"
+uv:Ma/Expando_686/Fractions              = 4 0.690 0.050 0.110 0.150
+d:Ma/Expando_686/Density                = 1.34 g/cm3
+
+# 9. Expando PPS (Polyphenylene sulfide woven sleeving) 
+s:Ma/Expando_PPS/Type                  = "Compound"
+sv:Ma/Expando_PPS/Components             = 3 "Carbon" "Hydrogen" "Sulfur"
+uv:Ma/Expando_PPS/Fractions              = 3 0.666 0.037 0.297
+d:Ma/Expando_PPS/Density                = 1.35 g/cm3
+
+# 10. PLA (Polylactic Acid) - 3D Printing Material
+s:Ma/PLA_3D_Print/Type                 = "Compound"
+sv:Ma/PLA_3D_Print/Components           = 3 "Carbon" "Hydrogen" "Oxygen"
+uv:Ma/PLA_3D_Print/Fractions            = 3 0.500 0.056 0.444
+d:Ma/PLA_3D_Print/Density              = 1.24 g/cm3
+
+# 11. Versilon 367 Fluoropolymer Tubing 
+s:Ma/Versilon_367/Type                 = "Compound"
+sv:Ma/Versilon_367/Components           = 2 "Carbon" "Fluorine"
+uv:Ma/Versilon_367/Fractions            = 2 0.240 0.760
+d:Ma/Versilon_367/Density              = 2.15 g/cm3

@@ -1,0 +1,54 @@
+# =========== GEOMETRÍAS DE BLINDAJE ===========
+# Cara global 1
+s:Ge/BTC1/Parent = "World"
+s:Ge/BTC1/Type = "TsBox"
+s:Ge/BTC1/Material = "Al7075"
+d:Ge/BTC1/HLX = 4.5 cm
+d:Ge/BTC1/HLY = 4.5 cm
+d:Ge/BTC1/HLZ = 0.500 mm
+d:Ge/BTC1/TransZ = -5 cm
+
+# Cara global 2
+s:Ge/BTC2/Parent = "World"
+s:Ge/BTC2/Type = "TsBox"
+s:Ge/BTC2/Material = "Al7075"
+d:Ge/BTC2/HLX = 4.5 cm
+d:Ge/BTC2/HLY = 4.5 cm
+d:Ge/BTC2/HLZ = 0.500 mm
+d:Ge/BTC2/TransZ = 5 cm
+
+# Cara global 3
+s:Ge/BTC3/Parent = "World"
+s:Ge/BTC3/Type = "TsBox"
+s:Ge/BTC3/Material = "Al7075"
+d:Ge/BTC3/HLX = 4.5 cm
+d:Ge/BTC3/HLY = 0.500 mm
+d:Ge/BTC3/HLZ = 4.5 cm
+d:Ge/BTC3/TransY = -5 cm
+
+# Cara global 4
+s:Ge/BTC4/Parent = "World"
+s:Ge/BTC4/Type = "TsBox"
+s:Ge/BTC4/Material = "Al7075"
+d:Ge/BTC4/HLX = 4.5 cm
+d:Ge/BTC4/HLY = 0.500 mm
+d:Ge/BTC4/HLZ = 4.5 cm
+d:Ge/BTC4/TransY = 5 cm
+
+# Cara global 5
+s:Ge/BTC5/Parent = "World"
+s:Ge/BTC5/Type = "TsBox"
+s:Ge/BTC5/Material = "Al7075"
+d:Ge/BTC5/HLX = 0.5 mm
+d:Ge/BTC5/HLY = 4.5 mm
+d:Ge/BTC5/HLZ = 4.5 cm
+d:Ge/BTC5/TransX = -5 cm
+
+# Cara global 6
+s:Ge/BTC6/Parent = "World"
+s:Ge/BTC6/Type = "TsBox"
+s:Ge/BTC6/Material = "Al7075"
+d:Ge/BTC6/HLX = 0.5 mm
+d:Ge/BTC6/HLY = 4.5 mm
+d:Ge/BTC6/HLZ = 4.5 cm
+d:Ge/BTC6/TransX = 5 cm

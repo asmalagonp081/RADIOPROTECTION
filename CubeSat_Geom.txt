@@ -47,7 +47,37 @@ d:Ma/LithiumBattery/Density = 2.4 g/cm3
 s:Ma/LithiumBattery/DefaultColor = "Yellow"
 
 # ======= MATERIALES DE RADIOPROTECCIÓN ==========
+# 2. 1181 Copper Foil EMI Shielding Tape 
+s:Ma/Copper_EMI_Tape/Type              = "Compound"
+b:Ma/Copper_EMI_Tape/BuildFromMaterials  = "True"
+sv:Ma/Copper_EMI_Tape/Components         = 2 "G4_Cu" "G4_PLEXIGLASS" # Cobre con adhesivo acrílico [cite: 10, 11]
+uv:Ma/Copper_EMI_Tape/Fractions          = 2 0.85 0.15
+d:Ma/Copper_EMI_Tape/Density            = 7.6 g/cm3
 
+# 3. Cinta de Polyestireno
+s:Ma/Polyester/Type        = "Compound"
+sv:Ma/Polyester/Components = 3 "Carbon" "Hydrogen" "Oxygen"
+uv:Ma/Polyester/Fractions  = 3 0.6250 0.0419 0.3331
+d:Ma/Polyester/Density     = 1.38 g/cm3
+
+# 4. Delrin 300ATB (Acetal Resin) 
+s:Ma/Delrin_300ATB/Type                = "Compound"
+sv:Ma/Delrin_300ATB/Components           = 3 "Carbon" "Hydrogen" "Oxygen" # Polioximetileno (POM)
+uv:Ma/Delrin_300ATB/Fractions            = 3 0.4000 0.0671 0.5329
+d:Ma/Delrin_300ATB/Density              = 1.42 g/cm3
+
+# 7. SP527 Woven Glass Fabric in Epoxy Resin
+s:Ma/SP527_Glass_Epoxy/Type            = "Compound"
+b:Ma/SP527_Glass_Epoxy/BuildFromMaterials = "True"
+sv:Ma/SP527_Glass_Epoxy/Components       = 2 "G4_GLASS_LEAD" "G4_BGO" # Mezcla aproximada de vidrio y resina sintética
+uv:Ma/SP527_Glass_Epoxy/Fractions        = 2 0.60 0.40
+d:Ma/SP527_Glass_Epoxy/Density          = 1.85 g/cm3
+
+# 10. PLA (Polylactic Acid) - 3D Printing Material
+s:Ma/PLA_3D_Print/Type                 = "Compound"
+sv:Ma/PLA_3D_Print/Components           = 3 "Carbon" "Hydrogen" "Oxygen"
+uv:Ma/PLA_3D_Print/Fractions            = 3 0.500 0.056 0.444
+d:Ma/PLA_3D_Print/Density              = 1.24 g/cm3
 
 
 # ======= GEOMETRIA PRINCIPAL ========
@@ -169,12 +199,11 @@ d:Ge/R4/RotX        = 90. deg
 d:Ge/R4/RotY        = 0. deg
 d:Ge/R4/RotZ        = 90. deg
 
-
 # =========== GEOMETRÍAS DE BLINDAJE ===========
 # Cara global 1
 s:Ge/BTC1/Parent = "World"
 s:Ge/BTC1/Type = "TsBox"
-s:Ge/BTC1/Material = "Al7075"
+s:Ge/BTC1/Material = "SP527_Glass_Epoxy"
 d:Ge/BTC1/HLX = 4.5 cm
 d:Ge/BTC1/HLY = 4.5 cm
 d:Ge/BTC1/HLZ = 0.500 mm
@@ -183,7 +212,7 @@ d:Ge/BTC1/TransZ = -5 cm
 # Cara global 2
 s:Ge/BTC2/Parent = "World"
 s:Ge/BTC2/Type = "TsBox"
-s:Ge/BTC2/Material = "Al7075"
+s:Ge/BTC2/Material = "SP527_Glass_Epoxy"
 d:Ge/BTC2/HLX = 4.5 cm
 d:Ge/BTC2/HLY = 4.5 cm
 d:Ge/BTC2/HLZ = 0.500 mm
@@ -192,7 +221,7 @@ d:Ge/BTC2/TransZ = 5 cm
 # Cara global 3
 s:Ge/BTC3/Parent = "World"
 s:Ge/BTC3/Type = "TsBox"
-s:Ge/BTC3/Material = "Al7075"
+s:Ge/BTC3/Material = "SP527_Glass_Epoxy"
 d:Ge/BTC3/HLX = 4.5 cm
 d:Ge/BTC3/HLY = 0.500 mm
 d:Ge/BTC3/HLZ = 4.5 cm
@@ -201,7 +230,7 @@ d:Ge/BTC3/TransY = -5 cm
 # Cara global 4
 s:Ge/BTC4/Parent = "World"
 s:Ge/BTC4/Type = "TsBox"
-s:Ge/BTC4/Material = "Al7075"
+s:Ge/BTC4/Material = "SP527_Glass_Epoxy"
 d:Ge/BTC4/HLX = 4.5 cm
 d:Ge/BTC4/HLY = 0.500 mm
 d:Ge/BTC4/HLZ = 4.5 cm
@@ -210,7 +239,7 @@ d:Ge/BTC4/TransY = 5 cm
 # Cara global 5
 s:Ge/BTC5/Parent = "World"
 s:Ge/BTC5/Type = "TsBox"
-s:Ge/BTC5/Material = "Al7075"
+s:Ge/BTC5/Material = "SP527_Glass_Epoxy"
 d:Ge/BTC5/HLX = 0.5 mm
 d:Ge/BTC5/HLY = 4.5 mm
 d:Ge/BTC5/HLZ = 4.5 cm
@@ -219,11 +248,12 @@ d:Ge/BTC5/TransX = -5 cm
 # Cara global 6
 s:Ge/BTC6/Parent = "World"
 s:Ge/BTC6/Type = "TsBox"
-s:Ge/BTC6/Material = "Al7075"
+s:Ge/BTC6/Material = "SP527_Glass_Epoxy"
 d:Ge/BTC6/HLX = 0.5 mm
 d:Ge/BTC6/HLY = 4.5 mm
 d:Ge/BTC6/HLZ = 4.5 cm
 d:Ge/BTC6/TransX = 5 cm
+
 
 # =========== PCB ==================
 s:Ge/PCB/Parent = "World"
@@ -260,17 +290,36 @@ d:Ge/Chip/TransZ = 0 cm
 # ============== SCORING PLANE =====================
 # --- Configuración del Verificador de Energía ---
 s:Sc/VerifySource/Quantity                    = "PhaseSpace"
-s:Sc/VerifySource/Surface                     = "PCB/AnySurface"
+s:Sc/VerifySource/Surface                     = "Chip/AnySurface"
 s:Sc/VerifySource/OutputType                  = "ASCII" # Genera un archivo .phsp legible
 b:Sc/VerifySource/IncludeDirectAccessoryHits  = "True"
 s:Sc/VerifySource/IfOutputFileAlreadyExists   = "Overwrite"
-b:Sc/VerifySource/OutputToConsole             = "True"
+b:Sc/VerifySource/OutputToConsole             = "F"
+
+# Dosis absorbida
+s:Sc/DoseScorer/Quantity                  = "DoseToMedium"
+s:Sc/DoseScorer/Component                 = "Chip"
+b:Sc/DoseScorer/OutputToConsole           = "True"
+s:Sc/DoseScorer/IfOutputFileAlreadyExists = "Overwrite"
+
+# Energía depositada
+s:Sc/Myscorer/Quantity                  = "EnergyDeposit"
+s:Sc/Myscorer/Component                 = "Chip"
+b:Sc/Myscorer/OutputToConsole           = "True"
+s:Sc/Myscorer/IfOutputFileAlreadyExists = "Overwrite"
 
 
 # =========== PHYSICS LIST ==================
 s:Ph/Default/Type = "Geant4_Modular"
 sv:Ph/Default/Modules      = 4 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4ion-binarycascade" "g4decay"
 d:Ph/Default/CutForAllParticles = 0.1 mm
+
+# =========== GALATIC SOURCE ================
+s:So/Example/Type                            = "PhaseSpace"
+s:So/Example/PhaseSpaceFileName     = "Galactic_Source"
+s:So/Example/Component                  = "Sphere"
+#i:So/Example/PhaseSpaceMultipleUse= 2
+b:So/Example/PhaseSpaceIncludeEmptyHistories = "True"
 
 # ======== GUI ===========
 #b:Ts/UseQt = "True"
@@ -281,4 +330,3 @@ d:Gr/ViewA/AxesSize = 20. cm
 s:Gr/ViewA/ColorBy = "ParticleType"
 sv:Gr/ViewA/ColorByParticleTypeNames = 6 "proton" "alpha" "1000060120" "1000140280" "1000260560" "e-" 
 sv:Gr/ViewA/ColorByParticleTypeColors = 6 "lightBlue" "Pink" "Yellow" "Green" "Brown" "Red"
-

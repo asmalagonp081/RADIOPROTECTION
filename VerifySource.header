@@ -1,0 +1,35 @@
+TOPAS ASCII Phase Space
+
+Number of Original Histories: 950000
+Number of Original Histories that Reached Phase Space: 52
+Number of Scored Particles: 103
+
+Columns of data are as follows:
+ 1: Position X [cm]
+ 2: Position Y [cm]
+ 3: Position Z [cm]
+ 4: Direction Cosine X
+ 5: Direction Cosine Y
+ 6: Energy [MeV]
+ 7: Weight
+ 8: Particle Type (in PDG Format)
+ 9: Flag to tell if Third Direction Cosine is Negative (1 means true)
+10: Flag to tell if this is the First Scored Particle from this History (1 means true)
+
+Number of e-: 68
+Number of gamma: 13
+Number of proton: 11
+Number of alpha: 5
+Number of Si28: 6
+
+Minimum Kinetic Energy of e-: 0.0419068 MeV
+Minimum Kinetic Energy of gamma: 0.0245148 MeV
+Minimum Kinetic Energy of proton: 15.6122 MeV
+Minimum Kinetic Energy of alpha: 596.208 MeV
+Minimum Kinetic Energy of Si28: 4457.42 MeV
+
+Maximum Kinetic Energy of e-: 2.24404 MeV
+Maximum Kinetic Energy of gamma: 3.87001 MeV
+Maximum Kinetic Energy of proton: 6630.32 MeV
+Maximum Kinetic Energy of alpha: 1568.63 MeV
+Maximum Kinetic Energy of Si28: 4670.19 MeV

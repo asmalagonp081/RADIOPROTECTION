@@ -1,0 +1,43 @@
+TOPAS ASCII Phase Space
+
+Number of Original Histories: 10
+Number of Original Histories that Reached Phase Space: 10
+Number of Scored Particles: 36
+
+Columns of data are as follows:
+ 1: Position X [cm]
+ 2: Position Y [cm]
+ 3: Position Z [cm]
+ 4: Direction Cosine X
+ 5: Direction Cosine Y
+ 6: Energy [MeV]
+ 7: Weight
+ 8: Particle Type (in PDG Format)
+ 9: Flag to tell if Third Direction Cosine is Negative (1 means true)
+10: Flag to tell if this is the First Scored Particle from this History (1 means true)
+11: Run ID
+12: Event ID
+13: Track ID
+14: Parent ID
+15: Creator Process Name
+
+Number of e-: 6
+Number of proton: 10
+Number of alpha: 6
+Number of C12: 4
+Number of Si28: 6
+Number of Fe56: 4
+
+Minimum Kinetic Energy of e-: 0.201615 MeV
+Minimum Kinetic Energy of proton: 21.9547 MeV
+Minimum Kinetic Energy of alpha: 773.892 MeV
+Minimum Kinetic Energy of C12: 308.897 MeV
+Minimum Kinetic Energy of Si28: 4060.73 MeV
+Minimum Kinetic Energy of Fe56: 1715.45 MeV
+
+Maximum Kinetic Energy of e-: 0.395432 MeV
+Maximum Kinetic Energy of proton: 28795 MeV
+Maximum Kinetic Energy of alpha: 2597.16 MeV
+Maximum Kinetic Energy of C12: 15662.8 MeV
+Maximum Kinetic Energy of Si28: 42636.3 MeV
+Maximum Kinetic Energy of Fe56: 2816.44 MeV
