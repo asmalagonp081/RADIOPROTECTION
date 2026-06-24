@@ -1,3 +1,9 @@
+# -------------------------------------------------------------------------------------
+# Genera el PhaseSpace: " PhaseSpace_Galactic.*"
+# Es el código que genera la fuente de rayos cósmicos predefinidos desde SPENVIS y utilizados en TOPAS.
+# Autora: Angela Malagon.
+# -------------------------------------------------------------------------------------
+
 # ----------------- FUENTE RAYOS COSMICOS --------------------
 # ================= MUNDO ===========================
 b:Ge/World/Invisible            = "T"

@@ -1,3 +1,10 @@
+# -------------------------------------------------------------------------------------
+# Geometría principal del cubesat 
+# Utiliza el Galactic PhaseSpace como fuente de rayos cósmicos
+# Genera dos archivos .csv uno para la Dosis y Energía Depositada en el CHIP
+# Genera un phasespace en el Chip
+# -------------------------------------------------------------------------------------
+
 # ======== GEOMETRIA DEL CUBESAT ===================
 # ======== MUNDO =========
 # --- World ---
@@ -203,7 +210,7 @@ d:Ge/R4/RotZ        = 90. deg
 # Cara global 1
 s:Ge/BTC1/Parent = "World"
 s:Ge/BTC1/Type = "TsBox"
-s:Ge/BTC1/Material = "SP527_Glass_Epoxy"
+s:Ge/BTC1/Material = "AnodizedAluminum"
 d:Ge/BTC1/HLX = 4.5 cm
 d:Ge/BTC1/HLY = 4.5 cm
 d:Ge/BTC1/HLZ = 0.500 mm
@@ -212,7 +219,7 @@ d:Ge/BTC1/TransZ = -4.85 cm
 # Cara global 2
 s:Ge/BTC2/Parent = "World"
 s:Ge/BTC2/Type = "TsBox"
-s:Ge/BTC2/Material = "SP527_Glass_Epoxy"
+s:Ge/BTC2/Material = "AnodizedAluminum"
 d:Ge/BTC2/HLX = 4.5 cm
 d:Ge/BTC2/HLY = 4.5 cm
 d:Ge/BTC2/HLZ = 0.500 mm
@@ -221,7 +228,7 @@ d:Ge/BTC2/TransZ = 4.85 cm
 # Cara global 3
 s:Ge/BTC3/Parent = "World"
 s:Ge/BTC3/Type = "TsBox"
-s:Ge/BTC3/Material = "SP527_Glass_Epoxy"
+s:Ge/BTC3/Material = "AnodizedAluminum"
 d:Ge/BTC3/HLX = 4.5 cm
 d:Ge/BTC3/HLY = 0.500 mm
 d:Ge/BTC3/HLZ = 4.5 cm
@@ -230,7 +237,7 @@ d:Ge/BTC3/TransY = -4.85 cm
 # Cara global 4
 s:Ge/BTC4/Parent = "World"
 s:Ge/BTC4/Type = "TsBox"
-s:Ge/BTC4/Material = "SP527_Glass_Epoxy"
+s:Ge/BTC4/Material = "AnodizedAluminum"
 d:Ge/BTC4/HLX = 4.5 cm
 d:Ge/BTC4/HLY = 0.500 mm
 d:Ge/BTC4/HLZ = 4.5 cm
@@ -239,7 +246,7 @@ d:Ge/BTC4/TransY = 4.85 cm
 # Cara global 5
 s:Ge/BTC5/Parent = "World"
 s:Ge/BTC5/Type = "TsBox"
-s:Ge/BTC5/Material = "SP527_Glass_Epoxy"
+s:Ge/BTC5/Material = "AnodizedAluminum"
 d:Ge/BTC5/HLX = 0.5 mm
 d:Ge/BTC5/HLY = 4.5 mm
 d:Ge/BTC5/HLZ = 4.5 cm
@@ -248,7 +255,7 @@ d:Ge/BTC5/TransX = -4.85 cm
 # Cara global 6
 s:Ge/BTC6/Parent = "World"
 s:Ge/BTC6/Type = "TsBox"
-s:Ge/BTC6/Material = "SP527_Glass_Epoxy"
+s:Ge/BTC6/Material = "AnodizedAluminum"
 d:Ge/BTC6/HLX = 0.5 mm
 d:Ge/BTC6/HLY = 4.5 mm
 d:Ge/BTC6/HLZ = 4.5 cm
@@ -292,6 +299,7 @@ d:Ge/Chip/TransZ = 0 cm
 s:Sc/VerifySource/Quantity                    = "PhaseSpace"
 s:Sc/VerifySource/Surface                     = "Chip/AnySurface"
 s:Sc/VerifySource/OutputType                  = "ASCII" # Genera un archivo .phsp legible
+s:Sc/VerifySource/OutputFile                    = "PS_AnodizedAluminium"
 b:Sc/VerifySource/IncludeDirectAccessoryHits  = "True"
 s:Sc/VerifySource/IfOutputFileAlreadyExists   = "Overwrite"
 b:Sc/VerifySource/OutputToConsole             = "F"
@@ -299,12 +307,14 @@ b:Sc/VerifySource/OutputToConsole             = "F"
 # Dosis absorbida
 s:Sc/DoseScorer/Quantity                  = "DoseToMedium"
 s:Sc/DoseScorer/Component                 = "Chip"
+s:Sc/DoseScorer/OutputFile                = "Dose_AnodizedAluminium"
 b:Sc/DoseScorer/OutputToConsole           = "True"
 s:Sc/DoseScorer/IfOutputFileAlreadyExists = "Overwrite"
 
 # Energía depositada
 s:Sc/Myscorer/Quantity                  = "EnergyDeposit"
 s:Sc/Myscorer/Component                 = "Chip"
+s:Sc/MyScorer/OutputFile                = "EnergyDeposit_AnodizedAluminium"
 b:Sc/Myscorer/OutputToConsole           = "True"
 s:Sc/Myscorer/IfOutputFileAlreadyExists = "Overwrite"
 
