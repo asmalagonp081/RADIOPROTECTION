@@ -50,7 +50,7 @@ s:Ma/LithiumBattery/DefaultColor = "Yellow"
 # 2. 1181 Copper Foil EMI Shielding Tape 
 s:Ma/Copper_EMI_Tape/Type              = "Compound"
 b:Ma/Copper_EMI_Tape/BuildFromMaterials  = "True"
-sv:Ma/Copper_EMI_Tape/Components         = 2 "G4_Cu" "G4_PLEXIGLASS" # Cobre con adhesivo acrílico 
+sv:Ma/Copper_EMI_Tape/Components         = 2 "G4_Cu" "G4_PLEXIGLASS" # Cobre con adhesivo acrílico [cite: 10, 11]
 uv:Ma/Copper_EMI_Tape/Fractions          = 2 0.85 0.15
 d:Ma/Copper_EMI_Tape/Density            = 7.6 g/cm3
 
@@ -316,17 +316,18 @@ d:Ph/Default/CutForAllParticles = 0.1 mm
 
 # =========== GALATIC SOURCE ================
 s:So/Example/Type                            = "PhaseSpace"
-s:So/Example/PhaseSpaceFileName     = "Galactic_Source"
+s:So/Example/PhaseSpaceFileName     = "Source2"
 s:So/Example/Component                  = "Sphere"
 #i:So/Example/PhaseSpaceMultipleUse= 2
 b:So/Example/PhaseSpaceIncludeEmptyHistories = "True"
 
 # ======== GUI ===========
-#b:Ts/UseQt = "True"
-#s:Gr/ViewA/Type = "OpenGL"
-#b:Gr/ViewA/IncludeAxes = "True" 
+b:Ts/UseQt = "True"
+s:Gr/ViewA/Type = "OpenGL"
+b:Gr/ViewA/IncludeAxes = "True" 
 s:Gr/ViewA/AxesComponent = "World" 
 d:Gr/ViewA/AxesSize = 20. cm
 s:Gr/ViewA/ColorBy = "ParticleType"
+b:Gr/ViewA/CheckOverlappingParticles = "True"
 sv:Gr/ViewA/ColorByParticleTypeNames = 6 "proton" "alpha" "1000060120" "1000140280" "1000260560" "e-" 
 sv:Gr/ViewA/ColorByParticleTypeColors = 6 "lightBlue" "Pink" "Yellow" "Green" "Brown" "Red"
