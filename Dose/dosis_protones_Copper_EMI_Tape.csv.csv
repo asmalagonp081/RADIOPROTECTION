@@ -1,7 +1,0 @@
-# TOPAS Version: 3.9
-# Parameter File: CubeSat_Copper.txt
-# Results for scorer: DoseProtons
-# Filtered by: OnlyIncludeParticlesNamed = 1 "proton"
-# Scored in component: Chip
-# DoseToMedium ( Gy ) : Sum   
-1.803503408837059e-07

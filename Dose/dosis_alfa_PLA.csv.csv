@@ -1,7 +1,0 @@
-# TOPAS Version: 3.9
-# Parameter File: CubeSat_PLA.txt
-# Results for scorer: DoseAlpha
-# Filtered by: OnlyIncludeParticlesNamed = 1 "alpha"
-# Scored in component: Chip
-# DoseToMedium ( Gy ) : Sum   
-1.758636081206078e-08

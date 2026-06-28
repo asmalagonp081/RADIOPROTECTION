@@ -1,7 +1,0 @@
-# TOPAS Version: 3.9
-# Parameter File: CubeSat_Epoxy.txt
-# Results for scorer: DoseAlpha
-# Filtered by: OnlyIncludeParticlesNamed = 1 "alpha"
-# Scored in component: Chip
-# DoseToMedium ( Gy ) : Sum   
-3.547137339410256e-08
