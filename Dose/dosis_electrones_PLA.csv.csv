@@ -1,0 +1,7 @@
+# TOPAS Version: 3.9
+# Parameter File: CubeSat_PLA.txt
+# Results for scorer: DoseElectrons
+# Filtered by: OnlyIncludeParticlesNamed = 1 "e-"
+# Scored in component: Chip
+# DoseToMedium ( Gy ) : Sum   
+7.71637473917508e-07

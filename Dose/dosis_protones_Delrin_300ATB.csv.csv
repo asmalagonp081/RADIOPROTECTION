@@ -1,0 +1,7 @@
+# TOPAS Version: 3.9
+# Parameter File: CubeSat_Delrin.txt
+# Results for scorer: DoseProtons
+# Filtered by: OnlyIncludeParticlesNamed = 1 "proton"
+# Scored in component: Chip
+# DoseToMedium ( Gy ) : Sum   
+5.389997426163973e-08

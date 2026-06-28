@@ -1,0 +1,7 @@
+# TOPAS Version: 3.9
+# Parameter File: CubeSat_Epoxy.txt
+# Results for scorer: DoseSilicon
+# Filtered by: OnlyIncludeParticlesNamed = 1 "GenericIon(14,28)"
+# Scored in component: Chip
+# DoseToMedium ( Gy ) : Sum   
+1.021961361402646e-05

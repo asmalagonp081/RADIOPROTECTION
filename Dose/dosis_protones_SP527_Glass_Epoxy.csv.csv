@@ -1,0 +1,7 @@
+# TOPAS Version: 3.9
+# Parameter File: CubeSat_Epoxy.txt
+# Results for scorer: DoseProtons
+# Filtered by: OnlyIncludeParticlesNamed = 1 "proton"
+# Scored in component: Chip
+# DoseToMedium ( Gy ) : Sum   
+1.695121625289175e-07

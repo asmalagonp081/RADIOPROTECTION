@@ -1,0 +1,13 @@
+# -------------------------------------------------------------------
+# Archivo .gitignore para el proyecto RADIOPROTECTION
+# -------------------------------------------------------------------
+
+# Ignorar archivos de resultados de simulación y datos de espacio de fase.
+# Estos archivos suelen ser muy grandes y no deben ser versionados.
+
+# Archivos de espacio de fase (Phase-space files)
+*.phsp
+
+# Archivos de cabecera asociados a los archivos de espacio de fase
+*.header
+
