@@ -5,7 +5,7 @@ Este proyecto nació con el fin de encontrar una alternitativa estructural de ba
 
 ## Estructura del código 🗒️📂
 
-`
+```
 ├── CUBESAT
 │   ├── orbit_globe.gif
 │   ├── orbit_map.gif
@@ -50,4 +50,4 @@ Este proyecto nació con el fin de encontrar una alternitativa estructural de ba
     └── Testeo
         ├── Geom2.txt
         └── Source2.txt
-`
+```
