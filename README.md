@@ -5,6 +5,12 @@ Este proyecto nació con el fin de encontrar una alternitativa estructural de ba
 
 ## Estructura del código 🗒️📂
 
+- **CUBESAT:** gifs e imágenes extraídas directamente del programa SPENVIS de la ESA.
+- **Dose:** contiene cada código con la geometría principal del cubesat que integra una sub-capa de cada material, el nombre se organiza de la siguiente manera `CubeSat_[Material].txt`.
+- **Geometry:** Contiene la geometría estandarizada con los lineamientos del CubeSat 1U.
+- **Results:** contiene los archivos de salida .csv de cada material de blindaje proporcionados por los códigos de la carpeta `Dose`.
+- **Source:** contiene 
+
 ```
 ├── CUBESAT
 │   ├── orbit_globe.gif
