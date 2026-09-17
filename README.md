@@ -1,6 +1,6 @@
 # Análisis de Radioprotección para un Nanosatélite CubeSat 1U 🛰️🪐
 
-Este repositorio alberga el código automatizado para un análisis de radioprotección en una geometría correspondiente a un CubeSat 1U. 
+Este repositorio alberga el código automatizado para un análisis de radioprotección utilizando TOPASMC en una geometría correspondiente a un CubeSat 1U. 
 Este proyecto nació con el fin de encontrar una alternitativa estructural de bajo costo para la construcción de un Nanosatélite con componentes electrónicos COTS, y que su estructura preservara la adquisición de datos por el hardware, evitando daños por efectos de eventos únicos (SEE).
 
 ## Estructura del código 🗒️📂
@@ -56,4 +56,30 @@ Este proyecto nació con el fin de encontrar una alternitativa estructural de ba
     └── Testeo
         ├── Geom2.txt
         └── Source2.txt
+```
+
+## Instrucciones de uso ☑️
+Para compilar cada material implementado en cada geometría se deben seguir los siguientes pasos:
+
+1. **PhaseSpace_Galactic:** El código que genera la fuente de rayos código se encuentra ubicado en la ruta `/home/popo21/REPOS/RADIOPROTECTION/Source/CubeSat_Source.txt`. La forma correcta para compilar código utilizando TOPASMC es la siguiente:
+
+```
+topas "nombre_del_archivo.txt"
+```
+
+de manera que, para generar nuestra fuente es necesario ejecutar los siguientes comandos en nuestra bash
+
+```
+cd /home/popo21/REPOS/RADIOPROTECTION/Source
+topas CubeSat_Source.txt
+```
+
+2. **Calculo de Blindaje:** para ejecutar la geometría general del nanosatélite con la fuente `PhaseSpace_Galactic.*`, se debe copiar el resultado en la carpeta 
+`/home/popo21/REPOS/RADIOPROTECTION/Geometry`, y posteriormente compilar la geometría con el cálculo ya implementado.
+
+```
+cd /home/popo21/REPOS/RADIOPROTECTION/Source
+cp -- PhaseSpace_Galactic.* ../Geometry/
+cd ../Geometry/
+topas CubeSat_Geom.txt
 ```
